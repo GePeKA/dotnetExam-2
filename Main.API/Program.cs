@@ -1,9 +1,12 @@
-var builder = WebApplication.CreateBuilder(args);
+using Mediator.DependencyInjectionExtensions;
 
+var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddMediator(Main.Features.Helpers.AssemblyReference.Assembly);
 
 var app = builder.Build();
 
