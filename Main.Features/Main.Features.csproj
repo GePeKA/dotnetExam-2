@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Auth\Commands\RegisterUser\" />
+    <Folder Include="Auth\Queries\AuthenticateUser\" />
+  </ItemGroup>
+
 </Project>

@@ -11,10 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Main.Features\Main.Features.csproj" />
     <ProjectReference Include="..\Mediator\Mediator.csproj" />
   </ItemGroup>
