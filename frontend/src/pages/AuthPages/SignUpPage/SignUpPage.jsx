@@ -26,8 +26,8 @@ const SignUpPage = () => {
         } else { setError('') }
 
         const userData = {
-            name: name,
-            password: password,
+            UserName: name,
+            Password: password,
         };
 
         const response = await register(userData);

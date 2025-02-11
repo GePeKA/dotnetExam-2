@@ -8,12 +8,12 @@ const useAuth = () => {
     async function register(userData) {
         setLoading(true);
         //TODO: Поменять URL
-        return await axiosToBackend.post(`/signup`, userData)
+        return await axiosToBackend.post(`/auth/signup`, userData)
             .then((response) => {
                 if (response.status === 200) {
                     return {error: null };
                 } else {
-                    return {error: response.data };
+                    return {error: response.data.error };
                 }}).catch((e) => {
                 //Ошибка (не 2хх код) в ответе от бэка
                 if (e.response) {
@@ -30,11 +30,10 @@ const useAuth = () => {
 
     async function login(userData) {
         setLoading(true);
-        //TODO: Поменять URL
-        return await axiosToBackend.post(`/signin`, userData)
+        return await axiosToBackend.post(`/auth/signin`, userData)
             .then((response) => {
                 if (response.status === 200) {
-                    authStore.login(response.data);
+                    authStore.login(response.data.jwtToken);
                     return {error: null };
                 } else {
                     return {error: response.data };
