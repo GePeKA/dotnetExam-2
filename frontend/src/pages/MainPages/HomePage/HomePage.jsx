@@ -5,6 +5,8 @@ import {toast} from "react-toastify";
 import "./HomePage.css"
 import {Banner} from "../../../components/UI/Banner/Banner.jsx";
 import {Button} from "../../../components/UI/Button/Button.jsx";
+import {CreateGameWindow} from "../../../components/CreateGameWindow/CreateGameWindow.jsx";
+import {BestPlayersWindow} from "../../../components/BestPlayersWindow/BestPlayersWindow.jsx";
 
 //TODO: сделать пагинацию
 export default function HomePage() {
@@ -18,6 +20,8 @@ export default function HomePage() {
         {id: 6, username:"sex", rating:1, date: '00:00:02 04.02.2023', status: "closed"}
     ]);
     const [page, setPage] = useState(1);
+    const [createGameWindowIsOpen, setCreateGameWindowIsOpen] = useState(false);
+    const [bestPlayersWindowIsOpen, setBestPlayersWindowIsOpen] = useState(false);
 
     const fetchAllGames = async () => {
         try {
@@ -47,18 +51,14 @@ export default function HomePage() {
         return statusOrder[a.status] - statusOrder[b.status];
     });
 
-    const CreateNewGame = async () => {
-        //TODO: Сделать
-    }
-
     return (
         <div className="game-list">
+            <CreateGameWindow isOpen={createGameWindowIsOpen} onClose={() => setCreateGameWindowIsOpen(false)}/>
+            <BestPlayersWindow isOpen={bestPlayersWindowIsOpen} onClose={() => setBestPlayersWindowIsOpen(false)}/>
             <Banner className="game-list-banner">
                 <div className="game-list-buttons">
-                    {//TODO: Сделать окошко с лидерами
-                    }
-                    <Button text={"Leaders"} ></Button>
-                    <Button text={"Create"} onClick={CreateNewGame}></Button>
+                    <Button text={"Leaders"} onClick={() => setBestPlayersWindowIsOpen(true)} ></Button>
+                    <Button text={"Create"} onClick={() => setCreateGameWindowIsOpen(true)}></Button>
                 </div>
                 {games.length ? sortedGames.map((game, index) => (
                         <GameCard key={index} date={game.date} rating={game.rating} id={game.id} username={game.username} status={game.status}/>)) :
