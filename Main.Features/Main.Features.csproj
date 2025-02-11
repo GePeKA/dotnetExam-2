@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Auth\Commands\RegisterUser\" />
-    <Folder Include="Auth\Queries\AuthenticateUser\" />
+    <ProjectReference Include="..\Main.Infrastructure\Main.Infrastructure.csproj" />
+    <ProjectReference Include="..\Shared\Shared.csproj" />
   </ItemGroup>
 
 </Project>

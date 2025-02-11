@@ -8,6 +8,9 @@
 
         public short CellIndex { get; set; }
 
+        public Guid RoundId { get; set; }
+        public Round Round { get; set; } = null!;
+
         public string Username { get; set; } = null!;
         public User User { get; set; } = null!;
     }
