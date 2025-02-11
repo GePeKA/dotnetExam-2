@@ -6,6 +6,6 @@ namespace RatingService.Data.Repositories
     {
         Task<List<User>> GetUsersSortedByRatingAsync(int count, int offset);
         Task AddUserAsync(User user);
-        Task<User> ChangeUserRatingAsync(string userName, int ratingChange);
+        Task<User?> ChangeUserRatingAsync(string userName, int ratingChange);
     }
 }

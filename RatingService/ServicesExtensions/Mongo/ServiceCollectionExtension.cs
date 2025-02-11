@@ -1,5 +1,5 @@
 ﻿using RatingService.Configurations;
-using RatingService.Data.MongoDbContext;
+using RatingService.Data.DatabaseContext;
 
 namespace RatingService.ServicesExtensions.Mongo
 {
