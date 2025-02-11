@@ -1,12 +1,8 @@
 import './Input.css';
-import React, { useState } from "react";
+import { useState } from "react";
 import { Icon } from "../Icon/Icon";
 import ICONS from "../../../assets/icons.jsx";
 import PropTypes from "prop-types";
-
-/// Input, с настройкой стилей зависящей от поля type
-//TODO: отсуствует возможность убрать тень
-//TODO: стоило бы сделать хук UseInput чтобы в компонентах каждый раз не прописывать вручную useState
 
 export function Input({type, children, id, iconPath, ...rest}) {
     Input.propsTypes = {

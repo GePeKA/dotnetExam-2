@@ -73,25 +73,25 @@ textarea {
 }
 
 .input-checkbox input:checked +.custom-checkbox {
-    background-color: orange;
+    background-color: var(--blue-500);
 }
 
 input[type="text"] {
-    box-shadow: var(--yellow-500) 8px 12px 0;
+    box-shadow: var(--blue-500) 8px 12px 0;
     transition: 0.2s linear;
 }
 
 input[type="text"]:focus {
-    box-shadow: var(--orange-500) 8px 12px 0;
+    box-shadow: royalblue 8px 12px 0;
 }
 
 input[type="password"] {
-    box-shadow: var(--yellow-500) 8px 12px 0;
+    box-shadow: var(--blue-500) 8px 12px 0;
     transition: 0.2s linear;
 }
 
 input[type="password"]:focus {
-    box-shadow: var(--orange-500) 8px 12px 0;
+    box-shadow: royalblue 8px 12px 0;
 }
 
 input[type="checkbox"] {

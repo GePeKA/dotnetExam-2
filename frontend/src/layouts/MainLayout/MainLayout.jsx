@@ -1,6 +1,5 @@
 import ICONS from '../../assets/icons';
 import { Icon } from '../../components/UI/Icon/Icon';
-import { IconButton } from '../../components/UI/Icon/IconButton/IconButton';
 import './MainLayout.css';
 import { Link, Outlet } from "react-router-dom";
 import authStore from "../../store/store.js";
@@ -17,7 +16,7 @@ const MainLayout = observer(() => {
                 <header className='page-header'>
                     <Link to="/" style={{textDecoration: 'none'}}>
                         <div className="page-logo">
-                            <Icon path={ICONS.game}/>
+                            <Icon path={ICONS.game} width={'35'}/>
                         </div>
                     </Link>
                     <div className="page-options">

@@ -80,7 +80,7 @@ const SignInPage = () => {
                 </Banner>
                 <div className={'dont-sign-in'}>
                     <p>Don’t registered yet?</p>
-                    <p><Link to="/signup" style={{color: COLORS.blue}}>Create an account</Link> in a few steps -{'>'}</p>
+                    <p><Link to="/signup" style={{color: COLORS.blue}}>Create an account</Link> in a few steps</p>
                 </div>
             </div>
         </>
