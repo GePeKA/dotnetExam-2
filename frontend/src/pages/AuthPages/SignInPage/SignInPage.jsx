@@ -24,8 +24,8 @@ const SignInPage = () => {
         } else { setError('') }
 
         const userData = {
-            name: name,
-            password: password,
+            UserName: name,
+            Password: password,
         };
 
         await login(userData).then((result) => {

@@ -1,8 +1,7 @@
 import axios from 'axios';
 
 export const axiosToBackend = axios.create({
-    //TODO: Добавить baseURL к бэку
-    baseURL: ``,
+    baseURL: `localhost:8080/api`,
     withCredentials: true,
     timeout: 30000
 });

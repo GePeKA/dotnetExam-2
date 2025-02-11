@@ -8,6 +8,7 @@ public static class ServiceCollectionExtension
     public static IServiceCollection AddDataAccessLayer(this IServiceCollection services)
     {
         return services
-            .AddTransient<IUserRepository, UserRepository>();
+            .AddTransient<IUserRepository, UserRepository>()
+            .AddTransient<IGameSessionRepository, GameSessionRepository>();
     }
 }

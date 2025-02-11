@@ -1,5 +1,6 @@
 using RatingService.Configurations;
 using RatingService.Data.Repositories;
+using RatingService.ServicesExtensions.Cors;
 using RatingService.ServicesExtensions.JwtAuthentication;
 using RatingService.ServicesExtensions.MassTransit;
 using RatingService.ServicesExtensions.Mediator;
@@ -13,6 +14,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddJwtAuthentication(builder.Configuration);
 builder.Services.AddAuthorization();
+builder.Services.AddCorsWithFrontendPolicy(builder.Configuration);
 
 builder.Services.AddCustomMediator();
 builder.Services.AddMasstransitRabbitMq(
@@ -30,6 +32,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors("Frontend");
 
 app.UseAuthentication();
 app.UseAuthorization();
