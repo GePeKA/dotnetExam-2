@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MassTransit.RabbitMQ" Version="8.3.6" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.12" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.12">
       <PrivateAssets>all</PrivateAssets>
@@ -24,10 +25,6 @@
     <ProjectReference Include="..\Main.Features\Main.Features.csproj" />
     <ProjectReference Include="..\Main.Infrastructure\Main.Infrastructure.csproj" />
     <ProjectReference Include="..\Mediator\Mediator.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="ServicesExtensions\MassTransit\" />
   </ItemGroup>
 
 </Project>

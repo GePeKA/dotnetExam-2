@@ -1,6 +1,8 @@
+using Main.API.Configurations;
 using Main.API.ServicesExtensions.DataAccess;
 using Main.API.ServicesExtensions.Infrastructure;
 using Main.API.ServicesExtensions.JwtAuth;
+using Main.API.ServicesExtensions.MassTransit;
 using Main.API.ServicesExtensions.Mediator;
 using Main.API.ServicesExtensions.Migrations;
 using Main.DataAccess.DatabaseContext;
@@ -18,6 +20,9 @@ builder.Services.AddAuthorization();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("Default")));
+builder.Services.AddMasstransitRabbitMq(
+    builder.Configuration.GetSection("RabbitMqConfig").Get<RabbitMqConfig>()!
+);
 
 builder.Services.AddDataAccessLayer();
 builder.Services.AddInfrastructureLayer(builder.Configuration);
