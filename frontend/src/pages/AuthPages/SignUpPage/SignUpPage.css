@@ -16,7 +16,7 @@
 
 .sign-up-form {
     gap: 20px;
-    width: 470px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;

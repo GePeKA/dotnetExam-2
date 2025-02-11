@@ -1,0 +1,30 @@
+.game-card {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 90%;
+    overflow-wrap: break-word;
+    border-style: solid;
+    border-color: var(--gray-600);
+    border-width: 2px;
+}
+
+.game-sender {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2em;
+}
+
+.username {
+    font-weight: bold;
+}
+
+.game-data {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1em;
+    text-align: center;
+        color: #3D3C3C;
+}

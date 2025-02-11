@@ -4,10 +4,12 @@ import ICONS from "../../../assets/icons.jsx";
 import {Button} from "../../../components/UI/Button/Button.jsx";
 import {Banner} from "../../../components/UI/Banner/Banner.jsx";
 import {Icon} from "../../../components/UI/Icon/Icon.jsx";
+import {useParams} from "react-router-dom";
 
 export default function GamePage() {
     const [board, setBoard] = useState(Array(9).fill(null));
     const [isXNext, setIsXNext] = useState(true);
+    const { id } = useParams()
     const handleClick = (index) => {
         if (board[index] || calculateWinner(board)) return;
 
@@ -42,7 +44,7 @@ export default function GamePage() {
 
     return (
         <div className="game-container">
-            <Banner>
+            <Banner className={"game-banner"}>
                 <div className="status">{status}</div>
                 <div className="board">
                     {board.map((square, index) => (

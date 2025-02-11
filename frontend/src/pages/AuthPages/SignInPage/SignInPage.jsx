@@ -32,7 +32,7 @@ const SignInPage = () => {
             if (result.error) {
                 setError(result.error);
             } else {
-                navigate("/account")
+                navigate("/")
             }
         });
     };
@@ -50,7 +50,7 @@ const SignInPage = () => {
                             <Input
                                 className="input-sign-in"
                                 id="name"
-                                placeholder="Alex"
+                                placeholder="name"
                                 type="text"
                                 onChange={(e) => setName(e.target.value)}/>
                         </div>

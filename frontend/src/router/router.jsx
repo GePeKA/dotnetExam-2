@@ -21,7 +21,7 @@ const routes = [
                 element: <ProtectedRoute element={<HomePage />} />
             },
             {
-                path:'/game',
+                path:'/game/:id',
                 element: <ProtectedRoute element={<GamePage />} />
             },
             {

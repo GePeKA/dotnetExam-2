@@ -2,6 +2,7 @@ import {observable, action, makeObservable} from 'mobx';
 import {toast} from "react-toastify";
 
 class AuthStore {
+    //TODO: Сделать "!!local.Storage.getItem('token')"
     isAuthenticated = !localStorage.getItem('token');
     login = async (token) => {
         toast.info("You have successfully logged in", {toastId: "LogInInfo"})

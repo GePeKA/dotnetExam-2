@@ -1,0 +1,21 @@
+.game-list {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.game-list-banner {
+    gap: 10px;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.game-list-buttons {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.game-list-buttons Button {
+    max-width: 20%;
+}

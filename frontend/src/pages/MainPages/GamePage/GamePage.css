@@ -4,9 +4,9 @@
     text-align: center;
 }
 
-.banner {
+.game-banner {
     gap: 20px;
-    width: 470px;
+    width: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;

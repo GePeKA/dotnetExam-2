@@ -17,7 +17,6 @@ const SignUpPage = () => {
 
     const handleRegister = async (e) => {
         e.preventDefault();
-        //TODO: добавить больше валидации
         if (!name || !password || !confirmPassword) {
             setError('Please fill in all fields');
             return;
@@ -35,7 +34,7 @@ const SignUpPage = () => {
         if (response.error) {
             setError(response.error);
         } else {
-            navigate("/account")
+            navigate("/")
         }
     };
 

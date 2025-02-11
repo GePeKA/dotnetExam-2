@@ -19,8 +19,7 @@ const useAuth = () => {
                 if (e.response) {
                     //.Message - ошибки кастомного Middleware, остальные - ошибки валидатора в контроллере
                     return { error: e.response.data.Message ? e.response.data.Message : e.response.data.errors.Password ?
-                            e.response.data.errors.Password[0] : e.response.data.errors.Email ? e.response.data.errors.Email[0] :
-                                e.response.data.errors.Name[0]};
+                            e.response.data.errors.Password[0] : e.response.data.errors.Name[0]};
                 }
                 //Остальные ошибки (не пришел ответ, не отправился запрос и тд)
                 else {
@@ -44,7 +43,7 @@ const useAuth = () => {
                 if (e.response) {
                     //.Message - ошибки кастомного Middleware, остальные - ошибки валидатора в контроллере
                     return { error: e.response.data.Message ? e.response.data.Message : e.response.data.errors.Password ?
-                            e.response.data.errors.Password[0] : e.response.data.errors.Email[0]} ;
+                            e.response.data.errors.Password[0] : e.response.data.errors.Name[0]} ;
                 }
                 //Остальные ошибки (не пришел ответ, не отправился запрос и тд)
                 else {
