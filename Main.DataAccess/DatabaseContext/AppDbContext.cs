@@ -37,6 +37,8 @@ namespace Main.DataAccess.DatabaseContext
                 .HasMany(gs => gs.Rounds)
                 .WithOne(r => r.GameSession)
                 .HasForeignKey(r => r.GameSessionId);
+            modelBuilder.Entity<GameSession>()
+                .HasIndex(gs => new { gs.Status, gs.DateTimeCreated });
 
             //Round
             modelBuilder.Entity<Round>()
@@ -57,6 +59,8 @@ namespace Main.DataAccess.DatabaseContext
                 .HasMany(r => r.Moves)
                 .WithOne(m => m.Round)
                 .HasForeignKey(m => m.RoundId);
+            modelBuilder.Entity<Round>()
+                .HasIndex(r => r.GameSessionId);
 
             //Move
             modelBuilder.Entity<Move>()
@@ -65,6 +69,8 @@ namespace Main.DataAccess.DatabaseContext
                 .HasOne(m => m.User)
                 .WithMany()
                 .HasForeignKey(m => m.Username);
+            modelBuilder.Entity<Move>()
+                .HasIndex(m => m.RoundId);
 
 
             base.OnModelCreating(modelBuilder);

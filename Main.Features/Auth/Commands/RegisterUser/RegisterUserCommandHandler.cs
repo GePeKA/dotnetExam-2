@@ -1,6 +1,7 @@
 ﻿using Domain.Abstractions.Repositories;
 using Domain.Entities;
 using Main.Infrastructure.Services.Abstractions;
+using Main.Infrastructure.UnitOfWork;
 using Shared.CQRS.Commands;
 using Shared.DTO;
 
@@ -8,6 +9,7 @@ namespace Main.Features.Auth.Commands.RegisterUser
 {
     public class RegisterUserCommandHandler(
         IUserRepository userRepository,
+        IUnitOfWork unitOfWork,
         IHasherService hasherService) : ICommandHandler<RegisterUserCommand, RegisterUserDto>
     {
         public async Task<Result<RegisterUserDto>> Handle(RegisterUserCommand request, CancellationToken cancellationToken)
@@ -34,6 +36,7 @@ namespace Main.Features.Auth.Commands.RegisterUser
             };
 
             var createdUsername = await userRepository.AddUserAsync(user);
+            await unitOfWork.SaveChangesAsync();
 
             return new Result<RegisterUserDto>(new RegisterUserDto(createdUsername), true);
         }

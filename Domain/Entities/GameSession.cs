@@ -8,6 +8,8 @@
 
         public DateTimeOffset DateTimeCreated { get; set; } = DateTimeOffset.UtcNow;
 
+        public int MaxAllowedRating { get; set; }
+
         public string CreatorUsername { get; set; } = null!;
         public User CreatorUser { get; set; } = null!;
 
