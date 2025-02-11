@@ -9,7 +9,9 @@ import {CreateGameWindow} from "../../../components/CreateGameWindow/CreateGameW
 import {BestPlayersWindow} from "../../../components/BestPlayersWindow/BestPlayersWindow.jsx";
 
 export default function HomePage() {
-    const [games, setGames] = useState([]);
+    const [games, setGames] = useState([
+        {id: 1, username:"sex", rating:1, date: '00:00:01 01.02.2023', status: "closed"}
+    ]);
     const [page, setPage] = useState(1);
     const [createGameWindowIsOpen, setCreateGameWindowIsOpen] = useState(false);
     const [bestPlayersWindowIsOpen, setBestPlayersWindowIsOpen] = useState(false);
