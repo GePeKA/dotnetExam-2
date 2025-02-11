@@ -11,6 +11,8 @@ public static class ServiceCollectionExtension
     {
         services.Configure<JwtOptions>(configuration.GetSection("JwtOptions"));
 
+        services.AddSingleton<IRatingCommunicationService, RatingCommunicationService>();
+
         services.AddTransient<IHasherService, HasherService>();
         services.AddTransient<ITokenService, TokenService>();
         services.AddTransient<IUnitOfWork, UnitOfWork>();

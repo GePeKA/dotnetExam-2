@@ -1,4 +1,5 @@
 using RatingService.Configurations;
+using RatingService.Data.Repositories;
 using RatingService.ServicesExtensions.JwtAuthentication;
 using RatingService.ServicesExtensions.MassTransit;
 using RatingService.ServicesExtensions.Mediator;
@@ -20,6 +21,7 @@ builder.Services.AddMasstransitRabbitMq(
 builder.Services.AddMongoDb(
     builder.Configuration.GetSection("MongoDbConfig").Get<MongoDbConfig>()!
 );
+builder.Services.AddTransient<IUserRepository, UserRepository>();
 
 var app = builder.Build();
 
