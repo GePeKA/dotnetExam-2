@@ -6,5 +6,6 @@ namespace Domain.Abstractions.Repositories
     {
         Task<long> AddGameSessionAsync(GameSession gameSession);
         Task<List<GameSession>> GetGameSessionsSortedByStatusAndTime(int offset, int count);
+        Task<GameSession?> GetGameSessionAsync(long gameSessionId);
     }
 }

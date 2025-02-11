@@ -1,4 +1,5 @@
 using Main.API.Configurations;
+using Main.API.ServicesExtensions.Cors;
 using Main.API.ServicesExtensions.DataAccess;
 using Main.API.ServicesExtensions.Infrastructure;
 using Main.API.ServicesExtensions.JwtAuth;
@@ -17,6 +18,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddJwtAuthentication(builder.Configuration);
 builder.Services.AddAuthorization();
+builder.Services.AddCorsWithFrontendPolicy(builder.Configuration);
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("Default")));
@@ -38,6 +40,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors("Frontend");
 
 app.UseAuthentication();
 app.UseAuthorization();
